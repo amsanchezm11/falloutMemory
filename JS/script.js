@@ -20,7 +20,6 @@ let dieciocho = document.getElementById("dieciocho");
 let diecinueve = document.getElementById("diecinueve");
 let veinte = document.getElementById("veinte");
 
-
 //CREAMOS LOS ARRAYS 
 // ARRAYS PARA LAS CASILLAS(td)
 let casillas = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince, dieciseis, diecisiete, dieciocho, diecinueve, veinte];
@@ -47,8 +46,6 @@ function asignarFoto(array1, array2) {
 barajar(paths);
 // LLAMADA A LA FUNCION ASIGNAR FOTO
 asignarFoto(casillas, paths);
-//console.log(casillas);
-
 
 // BOTON DE REINICIAR PARTIDA
 let boton = document.getElementById("reiniciar");
@@ -99,6 +96,7 @@ function mostrarBotonReiniciar() {
     boton.setAttribute("type", "button");
     boton.setAttribute("value", "Jugar de Nuevo");
     boton.setAttribute("onclick", "location.reload()");
+    boton.classList.add("brillo");
     contenedor.appendChild(boton);
 }
 
@@ -139,7 +137,6 @@ function mostrarMensajePerder() {
 function asignarDisable() {
     //ESTA CAMBIA LA VARIABLE GLOBAL
     contenedorIMG.forEach(img => {
-        //img.removeEventListener("click", seleccionarImg);
         img.removeAttribute("class");
         img.setAttribute("class", "mostrarFondo");
     });
@@ -212,7 +209,6 @@ function actualizarContador() {
     }
 }
 
-
 // FUNCIÓN COMPARAR --> COMPARA LOS DOS SRC PASADOS POR PARAMETRO Y RETORNA SI ES PAREJA O NO
 function comparar(src1, src2) {
 
@@ -233,10 +229,3 @@ function comparar(src1, src2) {
 
     return pareja;
 }
-
-
-
-
-
-
-

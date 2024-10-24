@@ -149,6 +149,11 @@ table,tr,td,img:hover{
     opacity: 0%;
 }
 
+.brillo{
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    animation: brillo 1.5s infinite alternate;
+}
+
 @keyframes parpadear {
     0%, 20% {
         text-shadow: 
@@ -170,5 +175,14 @@ table,tr,td,img:hover{
             0 0 20px darkblue, 
             0 0 30px darkblue, 
             0 0 40px darkblue;
+    }
+}
+
+@keyframes brillo {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 50px rgba(255, 204, 0, 1);
     }
 }
