@@ -1,0 +1,300 @@
+:root {
+    --color-principal: #325886;
+    --color-secundario: #447AB9;
+    --color-terciario: #82A7D6;
+    --color-cuaternario: #FEF265;
+    --color-quinquenario: #FCE8A4;
+    --color-sextenario: #FEEED4;
+    --fuente-principal: Overseer;
+    --tamaño-fuente: 16px;
+}
+
+* {
+    color: var(--color-cuaternario);
+    font-family: Overseer;
+    letter-spacing: 2px;
+    margin: 0;
+    cursor: url(../img/explosion.png), auto;
+}
+
+/*--- FUENTES ---*/
+@font-face {
+    font-family: 'Overseer';
+    src: url("../fonts/Overseer.otf") format('opentype'),
+        url("../fonts/Overseer Bold.otf") format('opentype'),
+        url("../fonts/Overseer Bold Italic.otf") format('opentype'),
+        url("../fonts/Overseer Italic.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overseer';
+    src: url("../fonts/Overseer\ Bold.otf") format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Overseer';
+    src: url("../fonts/Overseer\ Italic.otf") format('opentype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overseer';
+    src: url("../fonts/Overseer\ Bold\ Italic.otf") format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*--- ESTILOS ---*/
+
+html {
+    background-image: url("../img/vaultboy.jpg");
+    cursor: url("../img/explosion.png"), auto;
+    height: 100%;
+}
+
+h1 {
+    font-size: 65px;
+    margin-top: 20px;
+    text-shadow:
+        0 0 5px white,
+        0 0 10px darkblue,
+        0 0 15px darkblue,
+        0 0 20px darkblue,
+        0 0 30px darkblue,
+        0 0 40px darkblue;
+    animation: parpadear 5s infinite alternate;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    margin-left: 50px;
+    gap: 80px;
+}
+
+td {
+    border: 3px solid var(--color-principal);
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: var(--color-cuaternario);
+    background-image: url("../img/background.png");
+    background-size: 70% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+td:hover {
+    border: 3px solid yellow;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: darkblue;
+    letter-spacing: 2px;
+    cursor: url("../img/bomba.png"), auto;
+}
+
+table,
+tr,
+td,
+img {
+    cursor: url("../img/bomba.png"), auto;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+table,
+tr,
+td,
+img:hover {
+    cursor: url("../img/bomba.png"), auto;
+}
+
+.forma-h2 {
+    border: 3px solid var(--color-principal);
+    background-color: var(--color-cuaternario);
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    color: #4B8FD4;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 530px;
+    margin-bottom: 10px;
+}
+
+table{
+    margin-bottom: 10px;
+}
+.mostrarFondo {
+    opacity: 100%;
+}
+
+.quitarFondo {
+    opacity: 0%;
+}
+
+.fijo {
+    opacity: 100%;
+    pointer-events: none;
+}
+
+.sombra {
+    border: 3px solid var(--color-cuaternario);
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: darkblue;
+}
+
+.mensaje {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 130px;
+}
+
+.boton {
+    border: 4px solid var(--color-cuaternario);
+    border-radius: 15px;
+    background-color: var(--color-principal);
+    padding: 10px 15px;
+    color: var(--color-cuaternario);
+    font-size: 18px;
+}
+
+.boton:hover {
+    border: 4px solid var(--color-principal);
+    border-radius: 15px;
+    background-color: var(--color-cuaternario);
+    padding: 10px 15px;
+    color: blue;
+    font-size: 18px;
+    cursor: url("../img/bomba.png"), auto;
+}
+
+.boton-musica{
+    background: none;
+    border: none;
+    box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
+    -webkit-box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
+    -moz-box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
+}
+
+.boton-musica:hover{
+    color: var(--color-principal);
+    box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
+    -webkit-box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
+    -moz-box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
+}
+
+.opacidad-on {
+    opacity: 100%;
+}
+
+.opacidad-off {
+    opacity: 0%;
+}
+
+.brillo {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    animation: brillo 1.5s infinite alternate;
+}
+
+
+.container-copy{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2px;
+}
+
+.copy-icono{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-love{
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.container-musica {
+    border: 2px solid var(--color-cuaternario);
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+    cursor: url("../img/bomba.png"), auto;
+    width: 70px;
+}
+
+.img-musica {
+    width: 50px;
+    height: 50px;
+}
+
+.container-mensaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 130px;
+}
+
+/*--- ANIMACIONES ---*/
+@keyframes parpadear {
+
+    0%,
+    20% {
+        text-shadow:
+            0 0 5px white,
+            0 0 10px darkblue,
+            0 0 15px darkblue,
+            0 0 20px darkblue,
+            0 0 30px darkblue,
+            0 0 40px darkblue;
+    }
+
+    30%,
+    70% {
+        text-shadow: none;
+    }
+
+    80%,
+    100% {
+        text-shadow:
+            0 0 5px white,
+            0 0 10px darkblue,
+            0 0 15px darkblue,
+            0 0 20px darkblue,
+            0 0 30px darkblue,
+            0 0 40px darkblue;
+    }
+}
+
+@keyframes brillo {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 50px rgba(255, 204, 0, 1);
+    }
+}
+

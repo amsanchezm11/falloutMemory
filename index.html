@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FALLOUT MEMORY</title>
+    <link rel="icon" href="img/icons8--fallout-vault-boy-64.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container-mensaje">
+        <div class="mensaje">
+            <div id="fotoMensaje" class="opacidad-off">
+                <img id="winLose" src="img/win.png" alt="" class="fijo">
+            </div>
+            <div id="textoMensaje" class="opacidad-off">
+                <h2 id="hdos">¡HAS GANADO!</h2>
+            </div>
+            <div id="botonReiniciar"></div>
+        </div>
+        <div class="container-musica">
+            <img src="img/music.png" alt="Activar Música" class="fijo img-musica">
+            <button id="activarMusica" class="boton-musica">M&uacute;sica</button>
+        </div>
+    </div>
+    
+    <div class="contenedor-principal">
+        <div>
+            <h1>FALLOUT</h1>
+            <h2>Encuentra las parejas</h2>
+        </div>
+    
+        <div class="contenedor">
+            <table id="tabla">
+                <tr>
+                    <td><img id="uno" src="" alt=""></td>
+                    <td><img id="dos" src="" alt=""></td>
+                    <td><img id="tres" src="" alt=""></td>
+                    <td><img id="cuatro" src="" alt=""></td>
+                    <td><img id="cinco" src="" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img id="seis" src="" alt=""></td>
+                    <td><img id="siete" src="" alt=""></td>
+                    <td><img id="ocho" src="" alt=""></td>
+                    <td><img id="nueve" src="" alt=""></td>
+                    <td><img id="diez" src="" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img id="once" src="" alt=""></td>
+                    <td><img id="doce" src="" alt=""></td>
+                    <td><img id="trece" src="" alt=""></td>
+                    <td><img id="catorce" src="" alt=""></td>
+                    <td><img id="quince" src="" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img id="dieciseis" src="" alt=""></td>
+                    <td><img id="diecisiete" src="" alt=""></td>
+                    <td><img id="dieciocho" src="" alt=""></td>
+                    <td><img id="diecinueve" src="" alt=""></td>
+                    <td><img id="veinte" src="" alt=""></td>
+                </tr>
+            </table>      
+            <div id="container-aciertos" >
+                <img id="imgAcierto" src="" alt="">
+                <h2 id="aciertosMostrar"></h2>
+            </div>
+            <div class="container-copy">
+                <h3 class="copy-icono">&copy;</h3>
+                <h3> Bethesda</h3>
+            </div>
+        </div>
+    </div>
+    <div>
+        <audio id="musica" autoplay loop muted>
+            <source src="sounds/MusicaFondo.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+</body>
+
+</html>
