@@ -24,7 +24,7 @@ let veinte = document.getElementById("veinte");
 // ARRAYS PARA LAS CASILLAS(td)
 let casillas = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince, dieciseis, diecisiete, dieciocho, diecinueve, veinte];
 // CREAMOS UN ARRAY CON LOS SRC QUE VAMOS A AÑADIR A LAS IMAGENES(src)
-let paths = ["img/angelface.png", "img/perroface.png", "img/devilface.png", "img/nucacola.png", "img/ghoulface.png", "img/normalface.png", "img/deadface.png", "img/cumpleface.png", "img/chicleface.png", "img/chapin.png", "img/angelface.png", "img/perroface.png", "img/devilface.png", "img/nucacola.png", "img/ghoulface.png", "img/normalface.png", "img/deadface.png", "img/cumpleface.png", "img/chicleface.png", "img/chapin.png"];
+let paths = ["../img/angelface.png", "../img/perroface.png", "../img/devilface.png", "../img/nucacola.png", "../img/ghoulface.png", "../img/normalface.png", "../img/deadface.png", "../img/cumpleface.png", "../img/chicleface.png", "../img/chapin.png", "../img/angelface.png", "../img/perroface.png", "../img/devilface.png", "../img/nucacola.png", "../img/ghoulface.png", "../img/normalface.png", "../img/deadface.png", "../img/cumpleface.png", "../img/chicleface.png", "../img/chapin.png"];
 
 // FUNCION BARAJAR --> REMOVEMOS EL ARRAY DE PATHS PARA QUE A LA HORA DE AÑADIRLOS ESTÉN ALEATORIAMENTE COLOCADOS
 function barajar(array) {
@@ -127,7 +127,7 @@ function mostrarMensajePerder() {
     contenedorFoto.setAttribute("class", "opacidad-on");
     contenedorMensaje.setAttribute("class", "opacidad-on");
 
-    contenedorIMG.src = "IMG/lose.png";
+    contenedorIMG.src = "../img/lose.png";
     contenedorTexto.innerHTML = "¡OH! HAS PERDIDO...";
     
     contenedorIMG.classList.remove("quitarFondo");
