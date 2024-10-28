@@ -24,7 +24,7 @@ let veinte = document.getElementById("veinte");
 // ARRAYS PARA LAS CASILLAS(td)
 let casillas = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince, dieciseis, diecisiete, dieciocho, diecinueve, veinte];
 // CREAMOS UN ARRAY CON LOS SRC QUE VAMOS A AÑADIR A LAS IMAGENES(src)
-let paths = ["IMG/angelface.png", "IMG/perroface.png", "IMG/devilface.png", "IMG/nucacola.png", "IMG/ghoulface.png", "IMG/normalface.png", "IMG/deadface.png", "IMG/cumpleface.png", "IMG/chicleface.png", "IMG/chapin.png", "IMG/angelface.png", "IMG/perroface.png", "IMG/devilface.png", "IMG/nucacola.png", "IMG/ghoulface.png", "IMG/normalface.png", "IMG/deadface.png", "IMG/cumpleface.png", "IMG/chicleface.png", "IMG/chapin.png"];
+let paths = ["img/angelface.png", "img/perroface.png", "img/devilface.png", "img/nucacola.png", "img/ghoulface.png", "img/normalface.png", "img/deadface.png", "img/cumpleface.png", "img/chicleface.png", "img/chapin.png", "img/angelface.png", "img/perroface.png", "img/devilface.png", "img/nucacola.png", "img/ghoulface.png", "img/normalface.png", "img/deadface.png", "img/cumpleface.png", "img/chicleface.png", "img/chapin.png"];
 
 // FUNCION BARAJAR --> REMOVEMOS EL ARRAY DE PATHS PARA QUE A LA HORA DE AÑADIRLOS ESTÉN ALEATORIAMENTE COLOCADOS
 function barajar(array) {
