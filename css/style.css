@@ -14,6 +14,7 @@
     font-family: Overseer;
     letter-spacing: 2px;
     margin: 0;
+    padding: 0;
     cursor: url(../img/explosion.png), auto;
 }
 
@@ -49,10 +50,16 @@
 
 /*--- ESTILOS ---*/
 
-html {
+body {
     background-image: url("../img/vaultboy.jpg");
     cursor: url("../img/explosion.png"), auto;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/*----- HEADER ----*/
+.container-titulo{
+    text-align: center;
 }
 
 h1 {
@@ -74,14 +81,30 @@ h2 {
     margin-bottom: 10px;
 }
 
-body {
+
+/*----- MAIN -----*/
+main {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-evenly;
+    align-content: center;
     align-items: center;
     text-align: center;
     margin-left: 50px;
-    gap: 80px;
+    margin-top: 50px;
+}
+
+/*----- TABLA -----*/
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 102px;
+}
+
+table{
+    margin-bottom: 20px;
 }
 
 td {
@@ -105,6 +128,7 @@ td:hover {
     letter-spacing: 2px;
     cursor: url("../img/bomba.png"), auto;
 }
+
 
 table,
 tr,
@@ -140,9 +164,8 @@ img:hover {
     margin-bottom: 10px;
 }
 
-table{
-    margin-bottom: 10px;
-}
+
+
 .mostrarFondo {
     opacity: 100%;
 }
@@ -169,7 +192,6 @@ table{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-top: 130px;
 }
 
 .boton {
@@ -191,7 +213,7 @@ table{
     cursor: url("../img/bomba.png"), auto;
 }
 
-.boton-musica{
+.boton-musica {
     background: none;
     border: none;
     box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
@@ -199,7 +221,7 @@ table{
     -moz-box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
 }
 
-.boton-musica:hover{
+.boton-musica:hover {
     color: var(--color-principal);
     box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
     -webkit-box-shadow: 7px 7px 20px -4px rgba(0, 57, 106, 0.71);
@@ -220,18 +242,22 @@ table{
 }
 
 
-.container-copy{
+.container-copy {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 2px;
 }
 
-.copy-icono{
+.copy-icono {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.img-love{
+#container-aciertos{
+    width: max-content;
+}
+
+.img-love {
     width: 60px;
     height: 60px;
     margin-left: 10px;
@@ -239,7 +265,7 @@ table{
 
 .container-musica {
     border: 2px solid var(--color-cuaternario);
-    background-color: var(--color-secundario);
+    background-color: rgba(0, 0, 0, 0.7); 
     border-radius: 10px;
     cursor: url("../img/bomba.png"), auto;
     width: 70px;
@@ -250,12 +276,64 @@ table{
     height: 50px;
 }
 
-.container-mensaje{
+.container-mensaje {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 130px;
 }
+
+
+.off{
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px 20px; 
+    z-index: 100; 
+}
+
+
+footer .container-musica {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 10px; 
+    width: auto;
+    
+    padding: 5px 10px;  
+    border-radius: 10px; 
+    height: 50px;
+}
+
+footer .container-musica audio {
+    width: 80px;
+    height: 80px;
+    display: none;
+}
+
+footer .container-musica img {
+    width: 40px;  
+    height: 40px; 
+    object-fit: contain; 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+footer .boton-musica {
+    background: none;
+    border: none;
+    padding: 0; 
+    cursor: pointer;
+}
+
 
 /*--- ANIMACIONES ---*/
 @keyframes parpadear {
@@ -298,3 +376,117 @@ table{
     }
 }
 
+/* ----- MEDIA QUERIES -----*/
+
+@media only screen and (max-width: 480px) {
+
+    html {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 45px;
+        margin-top: 10px;
+        text-shadow:
+            0 0 5px white,
+            0 0 10px darkblue,
+            0 0 15px darkblue,
+            0 0 20px darkblue,
+            0 0 30px darkblue,
+            0 0 40px darkblue;
+        animation: parpadear 5s infinite alternate;
+    }
+
+    h2 {
+        font-size: 20px; 
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        margin-left: 0px;
+    }
+
+    .container-mensaje {
+        order: 2;
+        width: 80%; 
+        height: 60%;
+        gap: 20px; 
+    }
+
+    .container-musica {
+        width: 50px;
+        height: 50px;
+    }
+
+    td {
+        border: 3px solid var(--color-principal);
+        width: 50px; 
+        height: 50px;  
+        border-radius: 5px;
+        background-color: var(--color-cuaternario);
+        background-image: url("../img/background.png");
+        background-size: 70% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    td:hover {
+        border: 3px solid yellow;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: darkblue;
+        letter-spacing: 2px;
+        cursor: url("../img/bomba.png"), auto;
+    }
+
+    table, tr, td, img {
+        cursor: url("../img/bomba.png"), auto;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    #container-aciertos {
+        width: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 12px;
+        gap: 10px; 
+    }
+
+    #container-aciertos img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .container-musica img {
+        width: 35px; 
+        height: 35px;
+        background-image: transparent;
+    }
+
+    .copy-icono {
+        font-size: 12px;  
+    }
+
+    footer {
+        padding: 10px 10px;  
+    }
+}

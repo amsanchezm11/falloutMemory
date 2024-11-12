@@ -86,10 +86,11 @@ function sumarAciertos() {
     if (contadorAciertos == 10) {
         //alert("¡HAS GANADO LA PARTIDA!");
         mostrarMensajeGanar();
-        mostrarBotonReiniciar(); 
+        mostrarBotonReiniciar();
     }
 
     parrafo.innerHTML = aciertos;
+    contenedor.removeAttribute("hidden");
     return contadorAciertos;
 }
 
@@ -103,16 +104,20 @@ function mostrarBotonReiniciar() {
     boton.setAttribute("onclick", "location.reload()");
     boton.classList.add("brillo");
     contenedor.appendChild(boton);
+    let contenedorWin = document.getElementById("mensajeWin");
+    contenedorWin.classList.remove("off");
 }
 
 // FUNCIÓN MOSTRAR MENSAJE GANAR --> SE OBTIENE LOS ELEMENTOS PADRES DE LA IMAGEN Y EL TEXTO Y SE LES CAMBIA LA OPACIDAD A 100%
 function mostrarMensajeGanar() {
+
     let contenedorFoto = document.getElementById("fotoMensaje");
     let contenedorMensaje = document.getElementById("textoMensaje");
     contenedorFoto.removeAttribute("class");
     contenedorMensaje.removeAttribute("class");
     contenedorFoto.setAttribute("class", "opacidad-on");
     contenedorMensaje.setAttribute("class", "opacidad-on");
+
 }
 
 // FUNCION MOSTRAR MENSAJE PERDER --> OBTIENE LOS ELMENTS PADRES E HIJOS Y LES CAMBIA LAS CLASES
@@ -129,10 +134,9 @@ function mostrarMensajePerder() {
 
     contenedorIMG.src = "img/lose.png";
     contenedorTexto.innerHTML = "¡OH! HAS PERDIDO...";
-    
+
     contenedorIMG.classList.remove("quitarFondo");
     contenedorIMG.setAttribute("class", "mostrarFondo");
-    
 
     asignarDisable();
     mostrarBotonReiniciar();
@@ -167,6 +171,7 @@ function seleccionarImg(element) {
     element.target.removeAttribute("class", "quitarFondo");
     element.target.setAttribute("class", "mostrarFondo");
 
+
     // COMPROBAMOS QUE SEA EL PRIMER CLICK
     if (contador === 0) {
         src1 = element.target.src;
@@ -182,29 +187,41 @@ function seleccionarImg(element) {
             console.log(contador);
 
             // COMPROBAMOS SI LOS DOS SRC SON IGUALES O NO
-            if (comparar(src1, src2) == "SI") {
+            if (comparar(src1, src2) == true) {
                 primerElemento.removeAttribute("class");
                 primerElemento.setAttribute("class", "fijo");
                 element.target.removeAttribute("class");
                 element.target.setAttribute("class", "fijo");
                 sumarAciertos();
+                let tdSeleccionadoPri = primerElemento.closest('td');
+                cambiarCasilla(tdSeleccionadoPri);
+                let tdSeleccionadoSec = element.target.closest('td');
+                cambiarCasilla(tdSeleccionadoSec);
+               
             }
 
             // PARA CONTROLAR QUE CUANDO SE PIERDA LA PARTIDA NO SE ACTIVE LA FUNCUÓN QUITAR FONDO
-            if(contadorFallos<15){
-            // DESPUÉS A TODAS LAS CARTAS QUE NO TENGAN LA CLASE FIJO LES "DAMOS LA VUELTA"
-            if (!element.target.classList.contains("fijo")) {
-                // SET TIME OUT --> PARA QUE CUANDO NO SEAN PAREJAS SE MUESTRE LA SEGUNDA IMAGEN DURANTE MEDIO SEGUNDO
-                setTimeout(() => {
-                    quitarFondo();
-                }, 500);
+            if (contadorFallos < 15) {
+                // DESPUÉS A TODAS LAS CARTAS QUE NO TENGAN LA CLASE FIJO LES "DAMOS LA VUELTA"
+                if (!element.target.classList.contains("fijo")) {
+                    // SET TIME OUT --> PARA QUE CUANDO NO SEAN PAREJAS SE MUESTRE LA SEGUNDA IMAGEN DURANTE MEDIO SEGUNDO
+                    setTimeout(() => {
+                        quitarFondo();
+                    }, 500);
+                }
             }
-        }
         }
 
     }
 
 }
+
+function cambiarCasilla(elemento) {
+    elemento.style.backgroundImage = 'none';
+    elemento.style.backgroundColor = 'var(--color-principal)';
+    elemento.style.border = '3px solid yellow';
+}
+
 
 // FUNCION ACTUALIZAR CONTADOR DE CLICKS --> ACTUALIZA EL CONTADOR CON UN CLICK Y AL SEGUNDO CLICK LO REINICIA
 function actualizarContador() {
@@ -217,11 +234,11 @@ function actualizarContador() {
 // FUNCIÓN COMPARAR --> COMPARA LOS DOS SRC PASADOS POR PARAMETRO Y RETORNA SI ES PAREJA O NO
 function comparar(src1, src2) {
 
-    let pareja = "";
+    let pareja = false;
     if (src1 == src2) {
-        pareja = "SI";
+        pareja = true;
     } else {
-        pareja = "NO";
+        pareja = false;
         contadorFallos++;
         console.log(contadorFallos);
         // CUANDO EL JUGADOR LLEGUE A 15 FALLOS PIERDE LA PARTIDA Y SE LE MUESTRA EL MENSAJE
@@ -234,10 +251,14 @@ function comparar(src1, src2) {
 }
 
 // MUSICA
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('activarMusica').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('activarMusica').addEventListener('click', function () {
         let musica = document.getElementById('musica');
-        // DESMUTEAMOS EL AUDIO
-        musica.muted = false; 
+
+        if (musica.muted) {
+            musica.muted = false;
+        } else {
+            musica.muted = true;
+        }
     });
 });
